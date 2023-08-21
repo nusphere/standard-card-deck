@@ -18,6 +18,6 @@
     "psr-4": {
       "NuBox\\English-Card-Deck\\": "lib/src"
     },
-    "files": ["lib/functions/"]
+    "files": ["lib/functions/func.drawCard.php"]
   }
 }
