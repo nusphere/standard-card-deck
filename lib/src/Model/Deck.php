@@ -2,6 +2,9 @@
 
 namespace NuBox\StandardCardDeck\Model;
 
+use NuBox\StandardCardDeck\Shuffle\ShuffleInterface;
+use NuBox\StandardCardDeck\Shuffle\SimpleShuffle;
+
 final class Deck
 {
     /**
@@ -9,8 +12,9 @@ final class Deck
      */
     private array $cards;
 
-    public function __construct()
-    {
+    public function __construct(
+        readonly ShuffleInterface $shuffle = new SimpleShuffle()
+    ) {
         $this->initDeck();
         $this->shuffle();
     }
@@ -54,7 +58,7 @@ final class Deck
 
     public function shuffle(): void
     {
-        shuffle($this->cards);
+        $this->shuffle::shuffle($this->cards);
     }
 
     public function toArray(): array
