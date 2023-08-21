@@ -1,11 +1,14 @@
 <?php
 
-function drawCard(string $card, int $width = 117, int $height = 180): string
+function drawCard(string|array $card, int $width = 117, int $height = 180): string
 {
+    if (is_array($card)) {
+        $card = implode('-', $card);
+    }
+
     $card = strtolower($card);
 
     $type = match (true) {
-        str_contains($card, 'club'), str_contains($card, 'kreuz') => 'clubs',
         str_contains($card, 'heart'), str_contains($card, 'herz') => 'hearts',
         str_contains($card, 'spade'), str_contains($card, 'pik') => 'spades',
         str_contains($card, 'dia'), str_contains($card, 'karo') => 'diamonds',
@@ -25,7 +28,6 @@ function drawCard(string $card, int $width = 117, int $height = 180): string
         str_contains($card, 'jack'), str_contains($card, 'bube') => 'jack',
         str_contains($card, 'queen'), str_contains($card, 'dame') => 'queen',
         str_contains($card, 'king'), str_contains($card, 'könig') => 'king',
-        str_contains($card, 'ace'), str_contains($card, 'ass') => 'ace',
         default => 'ace'
     };
 
