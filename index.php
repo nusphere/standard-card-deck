@@ -17,7 +17,6 @@ echo drawBack(2);
 
 
 $deck = new \NuBox\StandardCardDeck\Model\Deck();
-$card = $deck->takeCard();
 
 echo drawCard($deck->takeCard());
 echo drawCard($deck->takeCard());

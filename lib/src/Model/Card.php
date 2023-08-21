@@ -27,4 +27,22 @@ final class Card
     {
         $this->type = $type;
     }
+
+    public function getValue(): int
+    {
+        if ($this->type === Type::CARD_ASS) return 11;
+
+        if (is_numeric($this->type->value)) return (int)$this->type->value;
+
+        return 10;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'suite' => $this->suit->name,
+            'type' => $this->type->value,
+            'value' => $this->getValue()
+        ];
+    }
 }

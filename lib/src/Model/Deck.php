@@ -56,4 +56,15 @@ final class Deck
     {
         shuffle($this->cards);
     }
+
+    public function toArray(): array
+    {
+        $deckArray = [];
+
+        foreach ($this->cards as $card) {
+            $deckArray[] = $card->toArray();
+        }
+
+        return $deckArray;
+    }
 }
