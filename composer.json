@@ -8,15 +8,14 @@
     }
   ],
   "require": {
-    "php": "~8.0 || ~8.1 || ~8.2",
-    "noeldavies/cards": "*"
+    "php": "~8.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
   },
   "autoload": {
     "psr-4": {
-      "NuBox\\English-Card-Deck\\": "lib/src"
+      "NuBox\\StandardCardDeck\\": "lib/src"
     },
     "files": [
       "lib/functions/func.drawCard.php",

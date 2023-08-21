@@ -1,9 +1,13 @@
 <?php
 
-function drawCard(string|array $card, int $width = 117, int $height = 180): string
+use NuBox\StandardCardDeck\Model\Card;
+
+function drawCard(string|array|Card $card, int $width = 117, int $height = 180): string
 {
     if (is_array($card)) {
         $card = implode('-', $card);
+    } elseif ($card instanceof Card) {
+        $card = $card->getSuit()->name . '-' . $card->getType()->name;
     }
 
     $card = strtolower($card);
