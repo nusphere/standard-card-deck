@@ -1,0 +1,23 @@
+{
+  "name": "nusphere/english-card-deck",
+  "description": "simple functions for displaying english card deck",
+  "authors": [
+    {
+      "name": "Nusphere",
+      "email": "nusphere@retro-blenders.com"
+    }
+  ],
+  "require": {
+    "php": "~8.0 || ~8.1 || ~8.2",
+    "noeldavies/cards": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "NuBox\\English-Card-Deck\\": "lib/src"
+    },
+    "files": ["lib/functions/"]
+  }
+}
