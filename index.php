@@ -16,7 +16,7 @@ echo '<br>';
 echo drawBack(2);
 
 
-$deck = new \NuBox\StandardCardDeck\Model\Deck();
+$deck = \NuBox\StandardCardDeck\Singleton\DeckSingleton::getInstance()->getDeck();
 
 echo drawCard($deck->takeCard());
 echo drawCard($deck->takeCard());
